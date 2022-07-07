@@ -12,7 +12,7 @@ const AddProduct = () => {
     const userId = JSON.parse(localStorage.getItem("user"))._id;
     // console.log(userId);
     if (title && content) {
-      let result = await fetch("http://localhost:5000/add", {
+      let result = await fetch(`http://localhost:${process.env.PORT}/add`, {
         method: "POST",
         body: JSON.stringify({
           title,

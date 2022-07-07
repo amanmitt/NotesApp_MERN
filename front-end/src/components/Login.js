@@ -17,7 +17,7 @@ const Login = () => {
   const loginHandler = async () => {
     console.log(email, password);
     if (email.length > 0 && password.length > 0) {
-      let result = await fetch("http://localhost:5000/login", {
+      let result = await fetch(`http://localhost:${process.env.PORT}/login`, {
         method: "POST",
         body: JSON.stringify({
           email,

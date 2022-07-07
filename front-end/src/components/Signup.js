@@ -18,17 +18,20 @@ const Signup = () => {
   const signupfun = async () => {
     console.log(name, email, password);
     if (name && email && password) {
-      let result = await fetch("http://localhost:5000/register", {
-        method: "POST",
-        body: JSON.stringify({
-          name,
-          email,
-          password,
-        }),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+      let result = await fetch(
+        `http://localhost:${process.env.PORT}/register`,
+        {
+          method: "POST",
+          body: JSON.stringify({
+            name,
+            email,
+            password,
+          }),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
       result = await result.json();
       console.log(result);
       navigate("/home");
