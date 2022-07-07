@@ -4,7 +4,7 @@
   "description": "Ecommerce Dashboard using MERN stack",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon back-end/index.js"
+    "start": "node back-end/index.js"
   },
   "author": "aman",
   "license": "ISC",
