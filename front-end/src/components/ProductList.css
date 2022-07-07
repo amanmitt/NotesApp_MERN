@@ -1,0 +1,62 @@
+.notes-list > ul > li {
+  display: inline-block;
+  padding: 10px 5px;
+  color: black;
+  font-size: medium;
+  width: auto;
+}
+
+.notes-list > ul {
+  border: 2px solid darkseagreen;
+}
+
+.head-ul > li {
+  font-weight: 900;
+  padding: 10px 5px;
+}
+
+.notes-list {
+  width: 80%;
+  scroll-behavior: smooth;
+  margin-left: 40px;
+}
+
+#id {
+  border: none;
+}
+.deleteBtn {
+  margin-left: 2px;
+  padding: 5px;
+  color: white;
+  background-color: darkgreen;
+  border: none;
+  cursor: pointer;
+}
+
+.deleteBtn:hover {
+  background-color: darkseagreen;
+}
+
+.updateBtn {
+  margin-left: 2px;
+  margin-top: 1px;
+  padding: 3px;
+  font: optional;
+  color: white;
+  background-color: darkgreen;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.updateBtn:hover {
+  background-color: darkseagreen;
+}
+
+.search {
+  margin-left: 30px;
+  margin-bottom: 50px;
+  width: 80%;
+  padding: 10px;
+  border: 2px solid darkseagreen;
+}
