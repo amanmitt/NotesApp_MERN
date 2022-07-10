@@ -36,7 +36,7 @@ const UpdateProduct = () => {
           "Content-Type": "application/json",
         },
       });
-      navigate("/home");
+      navigate("/");
     } else {
       alert("Please add title and content");
     }

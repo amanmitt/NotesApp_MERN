@@ -1,4 +1,7 @@
-.notes-list > ul > li {
+/* * {
+  /* border: 2px solid black;
+} */
+*/ .notes-list > ul > li {
   display: inline-block;
   padding: 10px 5px;
   color: black;
@@ -8,6 +11,15 @@
 
 .notes-list > ul {
   border: 2px solid darkseagreen;
+  display: flex;
+  align-items: center;
+  list-style: none;
+  justify-content: space-between;
+}
+
+.notes-list > ul > div > li {
+  list-style: none;
+  margin: 5px;
 }
 
 .head-ul > li {
@@ -25,12 +37,13 @@
   border: none;
 }
 .deleteBtn {
-  margin-left: 2px;
-  padding: 5px;
+  margin: 2px;
+  padding: 5.5px;
   color: white;
   background-color: darkgreen;
   border: none;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .deleteBtn:hover {
@@ -59,4 +72,11 @@
   width: 80%;
   padding: 10px;
   border: 2px solid darkseagreen;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }

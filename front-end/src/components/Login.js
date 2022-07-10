@@ -10,7 +10,7 @@ const Login = () => {
   useEffect(() => {
     const auth = localStorage.getItem("user");
     if (auth) {
-      navigate("/home");
+      navigate("/");
     }
   });
 
@@ -30,7 +30,7 @@ const Login = () => {
       result = await result.json();
       console.log(result);
       if (result.auth) {
-        navigate("/home");
+        navigate("/");
         localStorage.setItem("user", JSON.stringify(result.user));
         localStorage.setItem("token", JSON.stringify(result.auth));
       } else {

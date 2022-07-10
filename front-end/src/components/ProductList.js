@@ -39,7 +39,7 @@ const ProductList = () => {
   };
   return (
     <>
-      <h1>Notes list</h1>
+      <h1 style={{ marginLeft: 50, color: "darkseagreen" }}>Notes list</h1>
       <input
         type="text"
         placeholder="Search note"
@@ -49,30 +49,32 @@ const ProductList = () => {
       {notes.length ? (
         <div className="notes-list">
           {/* <ul className="head-ul">
-        <li>Title</li>
-        <li>Content</li>
-        <li>Category</li>
-      </ul> */}
+            <li>Title</li>
+            <li>Content</li>
+            <li>Category</li>
+          </ul> */}
 
           {notes.map((item, index) => (
             <ul>
               {/* <li>{item.title}</li> */}
               <li>{item.content}</li>
               {/* <li>{item.category}</li> */}
-
-              <li>
-                <Link className="updateBtn" to={`/update/${item._id}`}>
-                  Update
-                </Link>
-              </li>
-              <li id="delete">
-                <button
-                  className="deleteBtn"
-                  onClick={() => deleteHandler(item._id)}
-                >
-                  Delete
-                </button>
-              </li>
+              <div className="buttons">
+                <li>
+                  <Link className="updateBtn" to={`/update/${item._id}`}>
+                    Update
+                  </Link>
+                </li>
+                <li id="delete">
+                  <Link
+                    className="deleteBtn"
+                    to="/"
+                    onClick={() => deleteHandler(item._id)}
+                  >
+                    Delete
+                  </Link>
+                </li>
+              </div>
             </ul>
           ))}
         </div>
