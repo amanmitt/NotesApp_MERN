@@ -9,14 +9,11 @@ const ProductList = () => {
   }, []);
 
   const getNotes = async () => {
-    let noteList = await fetch(
-      `http://localhost:${process.env.PORT}/products`,
-      {
-        headers: {
-          authorization: JSON.parse(localStorage.getItem("token")),
-        },
-      }
-    );
+    let noteList = await fetch(`http://localhost:5000/products`, {
+      headers: {
+        authorization: JSON.parse(localStorage.getItem("token")),
+      },
+    });
     noteList = await noteList.json();
     setNotes(noteList);
   };
@@ -24,12 +21,9 @@ const ProductList = () => {
 
   const deleteHandler = async (id) => {
     console.log(id);
-    let result = await fetch(
-      `http://localhost:${process.env.PORT}/product/${id}`,
-      {
-        method: "Delete",
-      }
-    );
+    let result = await fetch(`http://localhost:5000/product/${id}`, {
+      method: "Delete",
+    });
     result = await result.json();
     console.log(result);
     getNotes();
@@ -38,9 +32,7 @@ const ProductList = () => {
   const searchHandle = async (event) => {
     const key = event.target.value;
     if (key) {
-      let result = await fetch(
-        `http://localhost:${process.env.PORT}/search/${key}`
-      );
+      let result = await fetch(`http://localhost:5000/search/${key}`);
       result = await result.json();
       setNotes(result);
     } else getNotes();

@@ -14,12 +14,9 @@ const UpdateProduct = () => {
 
   const getNotesDetails = async () => {
     console.log(params);
-    let result = await fetch(
-      `http://localhost:${process.env.PORT}/product/${params.id}`,
-      {
-        method: "Get",
-      }
-    );
+    let result = await fetch(`http://localhost:5000/product/${params.id}`, {
+      method: "Get",
+    });
     result = await result.json();
     setTitle(result.title);
     setContent(result.content);
@@ -28,7 +25,7 @@ const UpdateProduct = () => {
 
   const UpdateProductHandler = async () => {
     if (title && content) {
-      await fetch(`http://localhost:${process.env.PORT}/product/${params.id}`, {
+      await fetch(`http://localhost:5000/product/${params.id}`, {
         method: "PUT",
         body: JSON.stringify({
           title,
